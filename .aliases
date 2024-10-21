@@ -1,0 +1,127 @@
+## Package Manager
+
+#Update dependencies
+alias update="sudo apt-get update"
+
+#Apply changes
+alias upgrade="sudo apt-get upgrade"
+
+#Update & upgrade
+alias improve="update && upgrade"
+
+#Fullupdate
+alias fullupdate="sudo apt full-upgrade"
+
+#Autoclean
+alias autoclean="sudo apt-get autoclean"
+
+#Autoremove
+alias autoremove="sudo apt-get autoremove"
+
+#List installed packages
+alias installed="apt list --installed | fzf" 
+
+
+## Navigation
+
+#Photos
+alias pics="cd $HOME/Imágenes"
+
+#Videos
+alias videos="cd $HOME/Vídeos"
+
+#Downloads
+alias downloads="cd $HOME/Descargas"
+
+#Documents
+alias docs="cd $HOME/Documentos"
+
+#Desktop
+alias desk="cd ~/Escritorio"
+
+#Music
+alias music="cd $HOME/Música"
+
+#Public
+alias public="cd $HOME/Público"
+
+#Templates
+alias templates="cd $HOME/Plantillas"
+
+
+## Reconnaissance
+
+#eza
+alias ls="eza --icons"
+
+alias la="eza --icons -lgha --group-directories-first"
+
+alias lt="eza --icons --tree"
+
+alias lta="eza --icons --tree -lgha"
+
+#batcat
+alias cat='batcat --theme="Monokai Extended Bright" --style=plain --paging=never $@'
+
+alias bat='batcat --theme="zenburn"'
+
+#fzf
+alias preview='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
+
+alias edit='vim $(preview)'
+
+#Largest Files
+alias largefile="du -h -x -s -- * | sort -r -h | head -20"
+
+#env
+alias getenv="printenv | sort | fzf"
+
+#alias
+alias getalias="alias | sort | fzf"
+
+
+## Utilities
+alias findman="compgen -c | fzf | sort | xargs man"
+
+
+## Source Control
+alias gitgraph="git log --all --decorate --oneline --graph"
+
+
+## Configuration
+
+#zsh
+alias zshconf="nvim ~/.zshrc"
+
+#bash
+alias bashconf="nvim $HOME/.bashrc"
+
+#toys
+alias toysconf="nvim ~/.toys"
+
+#tmux
+alias tmuxconf="nvim ~/.tmux.conf"
+
+
+## Terminal 
+
+#Refresh
+alias refresh="source $HOME/.zshrc"
+
+#Unsource
+alias unsource="exec $SHELL -l"
+
+
+## Open dotfiles
+
+#Aliases
+alias aliases="nvim ~/.aliases"
+
+#Content to be execute if zsh is started
+alias autostart="nvim ~/.autostart"
+
+#Logout
+alias logout="nvim ~/.zlogout"
+
+alias bash_logout="nvim ~/.bash_logout"
+
