@@ -1,0 +1,13 @@
+#asciiquarium
+alias aquarium='curl "http://asciiquarium.live?cols=$(tput cols)&rows=$(tput lines)"'
+
+#cmatrix
+alias matrix="cmatrix -s -b"
+
+#steam locomotive
+alias train="sl -e"
+alias liltrain="sl -le"
+alias flytrain="sl -alFe"
+
+#jfetch
+alias jfetch="source ~/.scripts/toys/jfetch"
