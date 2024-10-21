@@ -119,12 +119,6 @@ source $HOME/.aliases
 source $HOME/.toys
 source $HOME/.autostart
 
-# Manage sigedef
-export PROJECT="~/Escritorio/sigedef/src" 
-alias project="cd $PROJECT"
-alias init="source $PROJECT/.venv/bin/activate"
-alias assets="cd $PROJECT/assets"
-
 # Manage exiting zsh sessions
 # This function is called when the user logs out of the shell.
 # It can be used to run commands that should always be run when
