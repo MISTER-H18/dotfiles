@@ -1,3 +1,7 @@
+# .zshrc is for interactive shells. You set options for the interactive shell there with the setopt and unsetopt commands.
+# You can also load shell modules, set your history options, change your prompt, set up zle and completion, etcetera.
+# You also set any variables that are only used in the interactive shell (e.g. $LS_COLORS).
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -41,7 +45,7 @@ ZSH_THEME="passion"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -80,6 +84,8 @@ plugins=(
 	eza
 	web-search
 	python
+	command-not-found
+	zsh-fzf-history-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,30 +114,98 @@ export LANG=es_VE.UTF-8
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
+
+# Aliases
 alias vim=nvim
-alias ohmyzsh="vim ~/.oh-my-zsh" # use omz as a command
+alias ohmyzsh="vim ~/.oh-my-zsh" # the omz command is also available
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" # git alias to work with dotfiles
 
-# Startup Files
-source $HOME/.aliases
+# Keybindings
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+# History
+HISTSIZE=6000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Compleation styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+# Startup files
 source $HOME/.toys
 source $HOME/.autostart
+source $HOME/.aliases
+source $HOME/.shell_exit
 
-# Manage exiting zsh sessions
-# This function is called when the user logs out of the shell.
-# It can be used to run commands that should always be run when
-# the user logs out of the shell, such as running .zlogout.
-trap_exit() {
-    # commands to run here, e.g. if you 
-    # always want to run .zlogout:
-    if [[ ! -o login ]]; then
-      # don't do this in a login shell
-      # because it happens anyway
-      . ~/.zlogout
-    fi
-  }
+# Shell integrations
 
-# Defines trap for zsh
-trap trap_exit EXIT
+# Set up fzf key bindings and fuzzy completion
+# eval "$(fzf --zsh)"
+
+# Setup fzf theme
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
+
+# export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
+
+# Changing the behaviour of fzf, uses fd instead of fzf
+# export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+# _fzf_compgen_path() {
+#  fd --hidden --exclude .git . "$1"
+# }
+
+# Use fd to generate the list for directory completion
+# _fzf_compgen_dir() {
+#  fd --type=d --hidden --exclude .git . "$1"
+# }
+
+# Add fzf-git functionality - https://github.com/junegunn/fzf-git.sh.git
+# source ~/fzf-git.sh/fzf-git.sh
+
+# show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+
+# export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
+# export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+# _fzf_comprun() {
+#   local command=$1
+#   shift
+# 
+#   case "$command" in
+#     cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+#     export|unset) fzf --preview "eval 'echo \${}'"         "$@" ;;
+#     ssh)          fzf --preview 'dig {}'                   "$@" ;;
+#     *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
+#   esac
+# }
+
+# SIGEDEF
+export PROJECT="~/Escritorio/sigedef/src" 
+alias project="cd $PROJECT"
+alias init="source $PROJECT/.venv/bin/activate"
+alias assets="cd $PROJECT/assets"
+

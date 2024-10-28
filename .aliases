@@ -37,7 +37,7 @@ alias downloads="cd $HOME/Descargas"
 alias docs="cd $HOME/Documentos"
 
 #Desktop
-alias desk="cd ~/Escritorio"
+alias desk="cd $HOME/Escritorio"
 
 #Music
 alias music="cd $HOME/Música"
@@ -52,7 +52,7 @@ alias templates="cd $HOME/Plantillas"
 ## Reconnaissance
 
 #eza
-alias ls="eza --icons"
+alias ls="eza --icons --color=always --git --no-filesize --no-time --no-user --no-permissions"
 
 alias la="eza --icons -lgha --group-directories-first"
 
@@ -73,15 +73,17 @@ alias edit='vim $(preview)'
 #Largest Files
 alias largefile="du -h -x -s -- * | sort -r -h | head -20"
 
+
+## Utilities
+
+#man
+alias findman="compgen -c | fzf | sort | xargs man"
+
 #env
 alias getenv="printenv | sort | fzf"
 
 #alias
 alias getalias="alias | sort | fzf"
-
-
-## Utilities
-alias findman="compgen -c | fzf | sort | xargs man"
 
 
 ## Source Control
@@ -90,17 +92,20 @@ alias gitgraph="git log --all --decorate --oneline --graph"
 
 ## Configuration
 
-#zsh
-alias zshconf="nvim ~/.zshrc"
+#zshrc
+alias zshconf="vim ~/.zshrc"
 
-#bash
-alias bashconf="nvim $HOME/.bashrc"
+#zshenv
+alias zshenv="vim ~/.zshenv"
+
+#zlogout
+alias zlogout="vim ~/.zlogout"
 
 #toys
-alias toysconf="nvim ~/.toys"
+alias toysconf="vim ~/.toys"
 
 #tmux
-alias tmuxconf="nvim ~/.tmux.conf"
+alias tmuxconf="vim ~/.tmux.conf"
 
 
 ## Terminal 
@@ -112,16 +117,14 @@ alias refresh="source $HOME/.zshrc"
 alias unsource="exec $SHELL -l"
 
 
-## Open dotfiles
+## Other dotfiles
 
 #Aliases
-alias aliases="nvim ~/.aliases"
+alias aliases="vim ~/.aliases"
 
-#Content to be execute if zsh is started
-alias autostart="nvim ~/.autostart"
+#Execute once zsh is started
+alias autostart="vim ~/.autostart"
 
-#Logout
-alias logout="nvim ~/.zlogout"
-
-alias bash_logout="nvim ~/.bash_logout"
+#bashrc
+alias bashconf="vim ~/.bashrc"
 
