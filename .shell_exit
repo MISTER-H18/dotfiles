@@ -1,0 +1,17 @@
+# Manage quitting zsh sessions
+# This function is called when the user logs out of the shell.
+# It can be used to run commands that should always be run when
+# the user logs out of the shell, such as running .zlogout.
+trap_exit() {
+    # commands to run here, e.g. if you 
+    # always want to run .zlogout:
+    if [[ ! -o login ]]; then
+      # don't do this in a login shell
+      # because it happens anyway
+      clear
+      . ~/.zlogout
+    fi
+  }
+
+# Sets trap for zsh
+trap trap_exit EXIT
