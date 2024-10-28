@@ -1,4 +1,4 @@
-# dotfiles.sh
+# dotfiles
 :technologist: This is my current personal configuration for my Linux desktop. :penguin:
 
 ## Installation
