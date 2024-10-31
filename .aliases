@@ -87,7 +87,7 @@ alias getalias="alias | sort | fzf"
 
 
 ## Source Control
-alias gitgraph="git log --all --decorate --oneline --graph"
+alias gitgraph="git log --graph --decorate --abbrev-commit --all --pretty=oneline"
 
 
 ## Configuration
