@@ -143,6 +143,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Startup files
+source $HOME/.zshenv
 source $HOME/.toys
 source $HOME/.autostart
 source $HOME/.aliases

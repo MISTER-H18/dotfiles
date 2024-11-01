@@ -61,9 +61,9 @@ alias lt="eza --icons --tree"
 alias lta="eza --icons --tree -lgha"
 
 #batcat
-alias cat='batcat --theme="Monokai Extended Bright" --style=plain --paging=never $@'
+alias cat='batcat --theme="Monokai Extended Origin" --style=plain --paging=never $@'
 
-alias bat='batcat --theme="zenburn"'
+alias bat='batcat --theme=$BAT_THEME'
 
 #fzf
 alias preview='fzf --preview "batcat --color=always --style=numbers --line-range=:500 {}"'
