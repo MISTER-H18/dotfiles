@@ -111,7 +111,7 @@ alias tmuxconf="vim ~/.tmux.conf"
 ## Terminal 
 
 #Refresh
-alias refresh="source $HOME/.zshrc"
+alias refresh="source ~/.zshrc"
 
 #Unsource
 alias unsource="exec $SHELL -l"
@@ -122,7 +122,7 @@ alias unsource="exec $SHELL -l"
 #Aliases
 alias aliases="vim ~/.aliases"
 
-#Execute once zsh is started
+#Executes once zsh is started
 alias autostart="vim ~/.autostart"
 
 #bashrc

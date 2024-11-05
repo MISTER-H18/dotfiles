@@ -118,7 +118,6 @@ export LANG=es_VE.UTF-8
 # Aliases
 alias vim=nvim
 alias ohmyzsh="vim ~/.oh-my-zsh" # the omz command is also available
-alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME" # git alias to work with dotfiles
 
 # Keybindings
 bindkey '^p' history-search-backward

@@ -1,13 +1,31 @@
 #asciiquarium
 alias aquarium='curl "http://asciiquarium.live?cols=$(tput cols)&rows=$(tput lines)"'
 
-#cmatrix
+# cbonsai
+alias bonsai=cbonsai
+
+#screensavers
 alias matrix="cmatrix -s -b"
+
+#color test
+alias bloks="source ~/.scripts/toys/bloks"
+alias colorbars="source ~/.scripts/toys/colorbars"
+alias colortest="source ~/.scripts/toys/colortest"
+alias colortest-slim="source ~/.scripts/toys/colortest-slim"
+alias colorview="source ~/.scripts/toys/colorview"
 
 #steam locomotive
 alias train="sl -e"
 alias liltrain="sl -le"
 alias flytrain="sl -alFe"
+alias loltrain="sl -e | lolcat"
 
-#jfetch
+#system info
 alias jfetch="source ~/.scripts/toys/jfetch"
+
+#tetris
+alias tetris=""
+
+#weather
+weatherin() { curl -s wttr.in/"$1" }
+xrweather() { curl -s wttr.in/Caracas | head --lines=7 --quiet }

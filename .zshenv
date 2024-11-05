@@ -9,4 +9,4 @@ export BAT_THEME="Dracula"
 export BAT_PAGER="$PAGER -RF" # less is the default pager
 
 # man
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
