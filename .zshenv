@@ -10,3 +10,6 @@ export BAT_PAGER="$PAGER -RF" # less is the default pager
 
 # man
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# vim - nvim
+export VIMINIT="so ~/.vimrc"
