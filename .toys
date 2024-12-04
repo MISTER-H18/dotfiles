@@ -1,3 +1,6 @@
+#neofetch
+alias neo="neofetch --ascii_distro Kali"
+
 #asciiquarium
 alias aquarium='curl "http://asciiquarium.live?cols=$(tput cols)&rows=$(tput lines)"'
 
@@ -22,9 +25,6 @@ alias loltrain="sl -e | lolcat"
 
 #system info
 alias jfetch="source ~/.scripts/toys/jfetch"
-
-#tetris
-alias tetris=""
 
 #weather
 weatherin() { curl -s wttr.in/"$1" }
