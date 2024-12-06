@@ -1,0 +1,142 @@
+{
+  // VSCode settings //
+  //general
+  "emmet.triggerExpansionOnTab": true,
+  "files.autoSave": "afterDelay",
+
+  //text editor
+  "editor.accessibilitySupport": "off",
+  "editor.cursorBlinking": "smooth",
+  "editor.defaultColorDecorators": true,
+  "editor.fontFamily": "'Dank Mono', 'Fira Code', 'Victor Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14.5,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 5,
+  "editor.stickyScroll.enabled": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+
+  //workbench
+  "workbench.activityBar.location": "top",
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "developer-icon-theme",
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorTheme": "Electronic Moonlight",
+  "workbench.productIconTheme": "developer-icons",
+  "workbench.sideBar.location": "right",
+
+  //window
+  "window.autoDetectHighContrast": false,
+  "window.confirmBeforeClose": "always",
+  "window.customTitleBarVisibility": "auto",
+  "window.menuBarVisibility": "toggle", // toggle using alt key
+  "window.titleBarStyle": "custom",
+  "code-runner.enableAppInsights": false, // code runner telemetry
+
+  //terminal
+  "terminal.integrated.accessibleViewPreserveCursorPosition": true,
+  "terminal.integrated.fontFamily": "'Dank Mono', 'Fira Code', 'Victor Mono', Menlo, Monaco, 'Courier New'",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+
+  // Languages settings //
+  //html
+  "html.suggest.html5": true,
+  // Configures if the built-in HTML language support validates embedded scripts & embedded styles.
+  "html.validate.scripts": true,
+  "html.validate.styles": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "html.format.templating": true,
+
+  //css
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  //javaScript
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  //json
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  //php
+  "php.suggest.basic": true,
+  "php.validate.enable": true,
+  "php.validate.run": "onSave",
+  "[php]": {
+    "editor.formatOnSave": true
+  },
+
+  //blade
+  "[blade]": {
+    "editor.autoClosingBrackets": "always"
+  },
+
+  //python
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "standard",
+  "python.languageServer": "Pylance",
+
+  // Extensions settings //
+  //auto rename tag
+  "auto-rename-tag.activationOnLanguage": [
+    "html",
+    "xml",
+    "php",
+    "javascript",
+    "blade"
+  ],
+
+  //auto close tag
+  "auto-close-tag.activationOnLanguage": [
+    "html",
+    "xml",
+    "php",
+    "javascript",
+    "blade",
+    "jinja",
+    "markdown"
+  ],
+  "auto-close-tag.disableOnLanguage": ["python"],
+
+  // glassit-vsc
+  "glassit.alpha": 225,
+  "glassit.step": 10,
+
+  //code runner
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "python": "python3"
+    // "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    // "cpp": ""
+  },
+  "code-runner.showExecutionMessage": true,
+  "code-runner.runInTerminal": false,
+
+  //markdown preview github styles
+  "markdown-preview-github-styles.colorTheme": "system",
+
+  //codeium
+  "codeium.enableConfig": {
+    "*": true,
+    "jinja-html": true,
+    "plaintext": false
+  },
+  "workbench.panel.showLabels": false,
+  "editor.multiCursorModifier": "ctrlCmd"
+}
