@@ -1,5 +1,8 @@
-#neofetch
-alias neo="neofetch --ascii_distro Kali"
+#tetris
+## requirements
+## sudo apt update; sudo apt install snap
+## sudo snap install tetris-thefenriswolf
+alias tetris=/snap/bin/tetris-thefenriswolf.tetris
 
 #asciiquarium
 alias aquarium='curl "http://asciiquarium.live?cols=$(tput cols)&rows=$(tput lines)"'
@@ -28,4 +31,7 @@ alias jfetch="source ~/.scripts/toys/jfetch"
 
 #weather
 weatherin() { curl -s wttr.in/"$1" }
-xrweather() { curl -s wttr.in/Caracas | head --lines=7 --quiet }
+xrweather() {
+	curl -s wttr.in/Caracas | head --lines=7 --quiet
+	echo -e '\n'
+}
